@@ -62,3 +62,34 @@ SELECT customer_id, COUNT(*) FROM payment
 GROUP BY customer_id
 HAVING COUNT(*)>= 40
 
+--Exercise 02
+-- California sales tax law have changed and we need to alert our customers to this through email
+-- what are the emails of customeres who live in California
+-- ps.: the address_id is in common in both tables so is the conection
+-- ps.: inner join = junção interna
+-- inner join the order dont metter
+
+SELECT * FROM address
+SELECT * FROM customer
+
+SELECT district, email FROM address -- is ined to specify the information requested
+INNER JOIN customer
+ON customer.address_id = address.address_id -- the conection
+WHERE district = 'California' -- where is to find
+
+--*Exercise 03
+-- A customer walks in and is a huge fan of the actor "Nick Wahlberg" and wantas to know wich movies he is in.
+-- Get a list of all the movies  "Nick Wahlberg" has be in
+-- Ps.: two inner join
+-- Ps.: film_actor is the connection
+
+SELECT * FROM film -- film-id info
+SELECT * FROM actor -- have the info about first and las name also actor_id
+SELECT * FROM film_actor -- is the conection between film and actor and have the actor_id and film_id
+
+SELECT title, first_name, last_name FROM film_actor
+INNER JOIN actor
+ON film_actor.actor_id = actor.actor_id
+INNER JOIN film
+ON film_actor.film_id = film.film_id
+WHERE first_name = 'Nick'AND last_name = 'Wahlberg'
