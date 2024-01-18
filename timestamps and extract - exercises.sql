@@ -1,4 +1,4 @@
---TIMESTAMPS - EXTRACT - to_char EXERCISES
+--SQL - Udemy Exercise TIMESTAMPS - EXTRACT - to_char EXERCISES
 
 --show = show the value of a run-time parameter
 --show all = nome do parametro na configuração que esta atualmente em seguida texto
